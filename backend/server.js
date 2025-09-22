@@ -1,23 +1,10 @@
 import express from "express"
-
+import notesRoutes from "./routes/notesRoutes.js"
 const app= express();
 
+app.use("/api/notes",noteRoutes)
 
-app.get("/api/notes",(req,res)=>{
-    res.status(200).send("you get 500 notes");
-});
 
-app.post("/api/notes",(req,res)=> {
-    res.status(201).json({message:"note created succesfully"})
-})
-  
-app.put("/api/notes:id",(req,res)=> {
-    res.status(200).json({message:"note updated succesfully"})
-})
-
-app.put("/api/notes:id",(req,res)=> {
-    res.status(200).json({message:"note deleted succesfully"})
-})
 
 
 
