@@ -10,7 +10,7 @@ app.get("/api/notes",(req,res)=>{
 app.post("/api/notes",(req,res)=> {
     res.status(201).json({message:"note created succesfully"})
 })
-
+  
 app.put("/api/notes:id",(req,res)=> {
     res.status(200).json({message:"note updated succesfully"})
 })
