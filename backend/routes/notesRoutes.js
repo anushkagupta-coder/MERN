@@ -18,4 +18,4 @@ router.delete("/:id", (req,res)=> {
     res.status(200).json({message:"note deleted succesfully"})
 });
   
-export default router
+export default router;
