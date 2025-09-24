@@ -12,15 +12,15 @@ export async function getAllNotes(req,res) {
 }
 
 export async function createNote(req,res) {
-    try {
-        const {title,content} =req.body;
-        const note=new Note({title : title,content: content});
+    try{
+        const {title,content} = req.body;
+        const newNote=new Note({title,content});
 
-        const savedNote=await note.save();
-        res.status(201).json(savedNote);
+        await newNote.save()
+        res.status(201).json({message:"note created succesfully"});
 
-    } 
-    catch (error) {
+    }
+    catch(error){
         console.error("error in createNote controller",error);
         res.status(500).json({message:"internal server error"});
     }
