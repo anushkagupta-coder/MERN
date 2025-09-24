@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
-//1-create scheme
+//1-create schema
 //2-model based of that schems;
 
-const noteSchema=new mongoose.schema({
+const noteSchema=new mongoose.Schema({
     title:{
         type:String,
         required:true,     
