@@ -19,7 +19,7 @@ export async function createNote(req,res) {
         const newNote=new Note({title:title,content:content})
 
         await newNote.save()
-        res.status(201).jsaon({message:"note created succesfully"})
+        res.status(201).json({message:"note created succesfully"})
 
     } catch (error) {
         console.error("error in createNote controller",error);
