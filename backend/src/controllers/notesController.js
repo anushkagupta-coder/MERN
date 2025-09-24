@@ -11,6 +11,18 @@ export async function getAllNotes(req,res) {
     }
 }
 
+export async function getNoteById(req,res){
+    try{
+        const note = await Note.findById(req.params.id);
+        if(!note) return res.status(404).json({message:"note not found"});
+        res.json(note);
+    }
+    catch(error){
+        console.error("error in getNoteById controller",error);
+        res.status(500).json({message:"internal server error"});
+    }
+}
+
 export async function createNote(req,res) {
     try{
         const {title,content} = req.body;
@@ -42,7 +54,7 @@ export async function deleteNote(req,res){
     try{
         const deletedNode = await Note.findByIdAndDelete(req.params.id)
         if(!deletedNode) return res.status(404).json({message:"note not found "});
-        res(200).json({message:"note deleted successfully"});
+        res.status(200).json({message:"note deleted successfully"});
 
     }
     catch(error){
