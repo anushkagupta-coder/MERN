@@ -1,14 +1,21 @@
+import {Route,Routes} from "react-router";
 import React from 'react'
-import HomePage from ""
+import HomePage from "./pages/HomePage";
+import CreatePage from "./pages/CreatePage";
+import NoteDetailPage from "./pages/NoteDetailPage";
+
 
 const App = () => {
-  return (
-    <div>
+  return <div>
       <Routes>
-        <Route></Route>
+        
+        <Route path="/" element ={<HomePage />}/>
+        <Route path="/create" element ={<CreatePage/>}/>
+        <Route path="/note/:id" element ={<NoteDetailPage/>}/>
+
       </Routes>
     </div>
-  )
+  
 };
 
 export default App;
