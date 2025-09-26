@@ -5,4 +5,4 @@ const HomePage=()=>{
 
 
 
-export default 
+export default HomePage;
