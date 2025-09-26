@@ -9,25 +9,38 @@ dotenv.config();
 console.log(process.env.MONGO_URI);
 
 const app= express();
-const PORT=process.env.PORT ||5001
-connectDB();
+const PORT=process.env.PORT ||5001;
+
 
 //middleware
 app.use(express.json()); //this middleware will pasre json bodies : req.body
+
+app.use(rateLimiter);
+
+
 //our simple custom middleware 
-app.use(rateLimiter)
-app.use((req,res,next)=> {
-    console.log(`Req method is ${req.method} & Req URL is ${req.url}`);
-    next();
-})
+//app.use((req,res,next)=> {
+  //  console.log(`Req method is ${req.method} & Req URL is ${req.url}`);
+//next();
+//})
 
-app.use("/api/notes",notesRoutes)
-
+app.use("/api/notes",notesRoutes);
 
 
-
-app.listen(PORT,()=> {
+connectDB().then(()=>{
+    app.listen(PORT,()=> {
     console.log("server started on port:",PORT);
 });
+})
+
+
+
+
+
+
+
+
+
+
 
 //mongodb+srv://anushka612004_db_user:Udi5VPrYtb0MCExn@cluster0.9elijjp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
