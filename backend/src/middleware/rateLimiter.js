@@ -11,7 +11,7 @@ const rateLimiter = async (req,resizeBy,next) => {
             })
         }
     }catch {error}{
-        console.log("Rate limit error", error);
+        console.log("Rate limit error", error)
         next(error);
     }
 
