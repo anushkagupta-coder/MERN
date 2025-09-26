@@ -1,5 +1,5 @@
 const NoteDetailPage=()=>{
-    return <div>HomePage</div>;
+    return <div>NoteDetailPage</div>;
 }
 
 
