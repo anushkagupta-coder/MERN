@@ -6,7 +6,9 @@ import NoteDetailPage from "./pages/NoteDetailPage"
 import toast from "react-hot-toast";
 
 const App = () => {
-  return <div>
+  return (
+  <div>
+    <button className="btn btn-primary">click me</button>
       <Routes>
         <Route path="/" element ={<HomePage />}/>
         <Route path="/create" element ={<CreatePage/>}/>
@@ -14,7 +16,7 @@ const App = () => {
 
       </Routes>
     </div>
-  
+  );
 };
 
 export default App;
