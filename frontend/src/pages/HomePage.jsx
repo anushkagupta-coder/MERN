@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import Navbar from "../components/Navbar.jsx";
 import RateLimitedUI from "../components/RateLimitedUI.jsx";
-import axios from "lib/axios.js"
+import axios from "axios";
 import toast from "react-hot-toast";
 
 const HomePage=()=>{
@@ -19,7 +19,8 @@ const HomePage=()=>{
                 setIsRateLimited(false)
             } catch(error){
                 console.log("error fetching notes");
-                if(error.response.status===429){
+                console.log(error);
+                if(error.response?.status===429){
                     setIsRateLimited(true)
                 }
                 else{
