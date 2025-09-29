@@ -18,7 +18,7 @@ const CreatePage = () => {
     if (!title.trim() || !content.trim()) {
       toast.error("All fields are required");
       return;
-      
+
     }
 
     setLoading(true);
