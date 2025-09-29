@@ -37,13 +37,13 @@ const CreatePage = () => {
           icon: "💀",
         });
       } else {
-        toast.error("Failed to create note");
+        toast.error("Failed to create NOte");
       }
     } finally {
       setLoading(false);
     }
   };
-  
+
 
   return (
     <div className="min-h-screen bg-base-200">
